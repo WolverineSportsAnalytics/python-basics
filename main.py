@@ -21,6 +21,7 @@ def product(a, b):
 
 def divide(a, b):
     '''Accepts 2 numbers as parameters, returns a divided by b.'''
+    # only pass in numbers that are divisible for sake of implementation
     # CHALLENGE: use a while loop and your sub function to implement divide
     return 0
 
