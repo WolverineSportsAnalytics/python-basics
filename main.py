@@ -28,6 +28,7 @@ def divide(a, b):
 
 def root(num):
     '''Accepts a number as a parameter, returns the sqrt of num.'''
+    # only pass in numbers that are perfect squares for sake of implementation
     # leetcode easy
     # CHALLENGE: do not use any built-in Python functions
     return 0;
