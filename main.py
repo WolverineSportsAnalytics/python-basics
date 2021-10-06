@@ -5,25 +5,28 @@ def hello_world():
 
 def sum(a, b):
     '''Accepts 2 numbers as parameters, returns sum of a and b.'''
-    return 0
+    return (a + b)
 
 
 def sub(a, b):
     '''Accepts 2 numbers as parameters, returns subtraction of a and b.'''
-    return 0
+    return (a - b)
 
 
 def product(a, b):
     '''Accepts 2 numbers as parameters, returns product of a and b.'''
     # CHALLENGE: use a for loop and your sum function to implement product
-    return 0
+    product = 0
+    for i in range(a):
+        product = product + b
+    return product
 
 
 def divide(a, b):
     '''Accepts 2 numbers as parameters, returns a divided by b.'''
     # only pass in numbers that are divisible for sake of implementation
     # CHALLENGE: use a while loop and your sub function to implement divide
-    return 0
+    return (a / b)
 
 
 def root(num):
@@ -31,7 +34,12 @@ def root(num):
     # only pass in numbers that are perfect squares for sake of implementation
     # leetcode easy
     # CHALLENGE: do not use any built-in Python functions
-    return 0;
+    i = 0
+    for i in range(1000000000):
+        if i*i == num:
+          break
+        ++i;
+    return i
 
 
 def main():
