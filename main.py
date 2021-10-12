@@ -1,29 +1,28 @@
 def hello_world():
-    '''Prints "Hello World!".'''
+    print("Hello World!")
     return
 
-
+def asdkfj():
+    return
 def sum(a, b):
-    '''Accepts 2 numbers as parameters, returns sum of a and b.'''
-    return 0
+    return (a+b)
 
 
 def sub(a, b):
-    '''Accepts 2 numbers as parameters, returns subtraction of a and b.'''
-    return 0
+    return (a-b)
 
 
 def product(a, b):
     '''Accepts 2 numbers as parameters, returns product of a and b.'''
     # CHALLENGE: use a for loop and your sum function to implement product
-    return 0
+    return a*b
 
 
 def divide(a, b):
     '''Accepts 2 numbers as parameters, returns a divided by b.'''
     # only pass in numbers that are divisible for sake of implementation
     # CHALLENGE: use a while loop and your sub function to implement divide
-    return 0
+    return a/b
 
 
 def root(num):
