@@ -15,7 +15,11 @@ def sub(a, b):
 def product(a, b):
     '''Accepts 2 numbers as parameters, returns product of a and b.'''
     # CHALLENGE: use a for loop and your sum function to implement product
-    return a*b
+    sum = 0
+    for i in range(a):
+        sum += b
+    return sum
+        
 
 
 def divide(a, b):
@@ -30,7 +34,7 @@ def root(num):
     # only pass in numbers that are perfect squares for sake of implementation
     # leetcode easy
     # CHALLENGE: do not use any built-in Python functions
-    return 0;
+    return 0
 
 
 def main():
