@@ -1,7 +1,6 @@
 def hello_world():
     '''Prints "Hello World!".'''
-    print("Hello World")
-    return 
+    return print("Hello World")
 
 
 def sum(a, b):
@@ -17,7 +16,7 @@ def sub(a, b):
 def product(a, b):
     '''Accepts 2 numbers as parameters, returns product of a and b.'''
     # CHALLENGE: use a for loop and your sum function to implement product
-    s = 0
+    p = 0
     for i in range(b):
         s = sum(s,a)
     return s
@@ -28,7 +27,7 @@ def divide(a, b):
     # only pass in numbers that are divisible for sake of implementation
     # CHALLENGE: use a while loop and your sub function to implement divide
     count = 0
-    while (a > 0):
+    while (a != 0):
             a = sub(a,b)
             count +=1
     return count
@@ -39,13 +38,9 @@ def root(num):
     # only pass in numbers that are perfect squares for sake of implementation
     # leetcode easy
     # CHALLENGE: do not use any built-in Python functions
-    if num is 0 or num is 1:
-        return num
-    a = 1
-    result = 1
-    while (result < num):
+    a = 0
+    while (product(a,a)!= num):
         a+=1
-        result = a + a
     return a
 
 
