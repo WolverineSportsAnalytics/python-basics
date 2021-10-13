@@ -31,7 +31,7 @@ def root(num):
     # only pass in numbers that are perfect squares for sake of implementation
     # leetcode easy
     # CHALLENGE: do not use any built-in Python functions
-    return 1
+    return 0
 
 
 def main():
