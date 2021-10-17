@@ -1,8 +1,16 @@
+from collections import defaultdict
 def oddOrEven(nums):
     '''Given an unsorted list of numbers, return a list that indicates if the value at each index is odd (0) or even (1).'''
     # EXAMPLE:
     # Given [2, 4, 5, 7, 8, 10], return [1, 1, 0, 0, 1, 1]
-    return []
+    i = 0
+    for index in nums:
+        if index % 2 == 0:
+            nums[i] = 1
+        else:
+            nums[i] = 0
+        i+=1
+    return nums
 
 
 def mostOccurences(nums):
@@ -10,7 +18,14 @@ def mostOccurences(nums):
     # Hint: use oddOrEven to test function faster
     # Hint: use a map
     # Hint: https://stackoverflow.com/questions/13098638/how-to-iterate-over-the-elements-of-a-map-in-python
-    return -1 
+    frequency = defaultdict(int)
+    maxIndex = -1
+    maxNum = -1
+    for index in nums:
+        frequency[index] +=1
+        if frequency[index] > maxNum:
+            maxIndex = index
+    return maxIndex
 
 
 def main():
