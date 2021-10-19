@@ -2,7 +2,11 @@ def oddOrEven(nums):
     '''Given an unsorted list of numbers, return a list that indicates if the value at each index is odd (0) or even (1).'''
     # EXAMPLE:
     # Given [2, 4, 5, 7, 8, 10], return [1, 1, 0, 0, 1, 1]
-    return []
+    list = []
+    for num in nums:
+        list.append(((num)+1)%2)
+        
+    return list
 
 
 def mostOccurences(nums):
@@ -10,8 +14,18 @@ def mostOccurences(nums):
     # Hint: use oddOrEven to test function faster
     # Hint: use a map
     # Hint: https://stackoverflow.com/questions/13098638/how-to-iterate-over-the-elements-of-a-map-in-python
-    return -1 
+    greatest = 0
+    mp={}
+    for i in nums :
+      if i in mp :
+        mp[i] += 1;
+      else :
+        mp[i] = 1;
+    for i in mp:
+        if(i > greatest):
+            greatest = i
 
+    return greatest
 
 def main():
     '''The main function is where you will test all of your functions.'''
