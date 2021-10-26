@@ -2,8 +2,6 @@ def hello_world():
     print("Hello World!")
     return
 
-def asdkfj():
-    return
 def sum(a, b):
     return (a+b)
 
@@ -15,14 +13,20 @@ def sub(a, b):
 def product(a, b):
     '''Accepts 2 numbers as parameters, returns product of a and b.'''
     # CHALLENGE: use a for loop and your sum function to implement product
-    return a*b
+    sum = 0
+    for x in range(0, b):
+        sum += a
+    return sum
 
 
 def divide(a, b):
     '''Accepts 2 numbers as parameters, returns a divided by b.'''
     # only pass in numbers that are divisible for sake of implementation
     # CHALLENGE: use a while loop and your sub function to implement divide
-    return a/b
+    quotient = 0
+    for x in range(a, 0, b * (-1)):
+        quotient += 1
+    return quotient
 
 
 def root(num):
@@ -30,7 +34,13 @@ def root(num):
     # only pass in numbers that are perfect squares for sake of implementation
     # leetcode easy
     # CHALLENGE: do not use any built-in Python functions
-    return 0;
+    if (num == 0 | num == 1):
+        return num
+    for x in range(2, num):
+        if (x*x >= num):
+            break
+
+    return x
 
 
 def main():
