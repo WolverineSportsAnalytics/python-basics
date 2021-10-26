@@ -2,7 +2,13 @@ def oddOrEven(nums):
     '''Given an unsorted list of numbers, return a list that indicates if the value at each index is odd (0) or even (1).'''
     # EXAMPLE:
     # Given [2, 4, 5, 7, 8, 10], return [1, 1, 0, 0, 1, 1]
-    return []
+    vec
+    for (i in range(nums)) :
+        if (nums[i] % 2 == 0) :
+            vec.push_back(1)
+        else :
+            vec.push_back(0)
+    return vec
 
 
 def mostOccurences(nums):
