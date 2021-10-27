@@ -1,14 +1,17 @@
+from typing import Hashable
+
+
 def oddOrEven(nums):
     '''Given an unsorted list of numbers, return a list that indicates if the value at each index is odd (0) or even (1).'''
     # EXAMPLE:
     # Given [2, 4, 5, 7, 8, 10], return [1, 1, 0, 0, 1, 1]
-    vec
-    for (i in range(nums)) :
-        if (nums[i] % 2 == 0) :
-            vec.push_back(1)
+    list = []
+    for i in nums :
+        if i % 2 == 0 :
+            list.append(1)
         else :
-            vec.push_back(0)
-    return vec
+            list.append(0)
+    return list
 
 
 def mostOccurences(nums):
@@ -16,7 +19,17 @@ def mostOccurences(nums):
     # Hint: use oddOrEven to test function faster
     # Hint: use a map
     # Hint: https://stackoverflow.com/questions/13098638/how-to-iterate-over-the-elements-of-a-map-in-python
-    return -1 
+    hs = dict()
+    for i in nums:
+        if i in hs:
+            hs[i] += 1
+        else:  
+            hs[i] = 1      
+    mk = 0
+    for k,v in hs.items():
+        if v > hs[mk]:
+            mk = k
+    return mk
 
 
 def main():
