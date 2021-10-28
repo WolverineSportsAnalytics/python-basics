@@ -3,7 +3,7 @@ def hello_world():
     return
 
 
-def sum(a, b):
+def sum(a, b):  
     '''Accepts 2 numbers as parameters, returns sum of a and b.'''
     return 0
 
