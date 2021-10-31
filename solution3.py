@@ -3,6 +3,8 @@ from random import randint
 from math import sqrt, floor
 import datetime
 from statistics import mean, median, mode
+import csv
+
 
 def perfect_square(num):
     '''Return the sqrt of <num> only if <num> is a perfect square, otherwise return -1.'''
@@ -47,9 +49,9 @@ def get_stat(nums, type):
     '''Returns <type> of an unsorted list <nums>, where type can be mean, median, mode.'''
     # Example: get_stat([0, 1, 2], "median"), returns 1
     # Hint: statistics library
-    if type is "mean":
+    if type == "mean":
         return mean(nums)
-    elif type is "median":
+    elif type == "median":
         return median(nums)
     else: # type is mode
         return mode(nums)
@@ -60,8 +62,21 @@ def print_by_profit():
     # Hint: csv library
     # Hint: use built-in sort() after parsing csv
     # Hint: figure out how to print out each row in csv first
-    print("Working with csvs!")
 
+    with open('data/sales_records.csv') as file:
+        # Gets all rows in csv file and put into 2d array
+        data_rows = list(csv.reader(file, delimiter=','))
+
+    # Delete first row because it's just the column titles
+    print(data_rows.pop(0))
+
+    # Sort by profit (last index of each row)
+    data_rows.sort(key=lambda i:float(i[13]))
+
+    # Print each row
+    for row in data_rows:
+        print(row)
+    
 
 def main():
     '''Challenge 3 focuses on using some of Python's built-in functions and libraries.'''
