@@ -1,16 +1,23 @@
 #### INCLUDE ANY IMPORTS YOU NEED HERE, DO NOT PIP INSTALL ANY LIBRARIES ####
+import statistics as stats
+from math import sqrt
+from random import randrange
+from datetime import date
+import csv
 
 
 def perfect_square(num):
     '''Return the sqrt of <num> only if <num> is a perfect square, otherwise return -1.'''
     # Hint: math library
-    return 0
+    square_root = sqrt(num)
+    if int(square_root + 0.5) ** 2 == num:
+        return int(square_root)
+    return -1
 
 
 def random_num_generator(min, max):
     '''Returns a random number between min and max inclusive.'''
-    # Hint: random library
-    return 0
+    return randrange(min - 1, max)
 
 
 def get_today():
@@ -18,14 +25,19 @@ def get_today():
     # Note: Code must work regardless of today's date
     # Example: November 19, 2021
     # Hint: datetime library
-    return "November 19, 2021"
+    today = date.today()
+    return today.strftime("%B %d, %Y")
 
 
 def get_stat(nums, type):
     '''Returns <type> of an unsorted list <nums>, where type can be mean, median, mode.'''
     # Example: get_stat([0, 1, 2], "median"), returns 1
     # Hint: statistics library
-    return 0
+    if type == "mean":
+        return stats.mean(nums)
+    elif type == "median":
+        return stats.median(nums)
+    return stats.mode(nums)
 
 
 def print_by_profit():
@@ -33,7 +45,16 @@ def print_by_profit():
     # Hint: csv library
     # Hint: use built-in sort() after parsing csv
     # Hint: figure out how to print out each row in csv first
-    print("Working with csvs!")
+    with open('data/sales_records.csv') as file:
+        # Gets all rows in csv file and put into 2d array
+        data_rows = list(csv.reader(file, delimiter=','))
+    # Delete first row because it's just the column titles
+    print(data_rows.pop(0))
+    # Sort by profit (last index of each row)
+    data_rows.sort(key=lambda i:float(i[13]))
+    # Print each row
+    for row in data_rows:
+        print(row)
 
 
 def main():
