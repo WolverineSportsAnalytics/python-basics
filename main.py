@@ -10,7 +10,7 @@ def sum(a, b):
 
 def sub(a, b):
     '''Accepts 2 numbers as parameters, returns subtraction of a and b.'''
-    return 0
+    return a - b
 
 
 def product(a, b):
