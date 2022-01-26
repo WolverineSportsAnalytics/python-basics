@@ -5,7 +5,7 @@ def hello_world():
 
 def sum(a, b):
     '''Accepts 2 numbers as parameters, returns sum of a and b.'''
-    return 0
+    return a + b
 
 
 def sub(a, b):
