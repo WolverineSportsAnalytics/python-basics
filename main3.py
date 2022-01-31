@@ -1,16 +1,26 @@
 #### INCLUDE ANY IMPORTS YOU NEED HERE, DO NOT PIP INSTALL ANY LIBRARIES ####
-
+import math
+import random
+import datetime
+import statistics
+import csv
 
 def perfect_square(num):
     '''Return the sqrt of <num> only if <num> is a perfect square, otherwise return -1.'''
     # Hint: math library
-    return 0
+    
+    if num >= 0:
+        x = int(math.sqrt(num))
+        if (x*x == num):
+            return x
+    
+    return -1
 
 
 def random_num_generator(min, max):
     '''Returns a random number between min and max inclusive.'''
     # Hint: random library
-    return 0
+    return random.randint(min, max)
 
 
 def get_today():
@@ -18,14 +28,22 @@ def get_today():
     # Note: Code must work regardless of today's date
     # Example: November 19, 2021
     # Hint: datetime library
-    return "November 19, 2021"
+    x = datetime.datetime.now()
+    months = {1:"January", 2:"February", 3:"March", 4:"April", 5:"May", 6:"June", 
+              7:"July", 8:"August", 9:"September", 10:"October", 11:"November", 12:"December"}
+    return months[x.month] + " " + str(x.day) + ", " + str(x.year)
 
 
 def get_stat(nums, type):
     '''Returns <type> of an unsorted list <nums>, where type can be mean, median, mode.'''
     # Example: get_stat([0, 1, 2], "median"), returns 1
     # Hint: statistics library
-    return 0
+    if type == "mode":
+        return statistics.mode(nums)
+    elif type == "mean":
+        return statistics.mean(nums)
+    else:
+        return statistics.median(nums)
 
 
 def print_by_profit():
@@ -33,7 +51,15 @@ def print_by_profit():
     # Hint: csv library
     # Hint: use built-in sort() after parsing csv
     # Hint: figure out how to print out each row in csv first
-    print("Working with csvs!")
+    
+    with open("data/sales_records.csv") as f:
+        rows = list(csv.reader(f, delimiter=','))
+    
+    rows.pop(0)
+    rows.sort(key=lambda i:float(i[13]))
+    
+    for row in rows:
+        print(row)
 
 
 def main():
