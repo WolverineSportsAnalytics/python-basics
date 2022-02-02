@@ -1,5 +1,6 @@
 def hello_world():
     '''Prints "Hello World!".'''
+    print("hello world")
     return
 
 
