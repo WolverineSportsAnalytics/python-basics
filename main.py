@@ -5,25 +5,37 @@ def hello_world():
 
 def sum(a, b):
     '''Accepts 2 numbers as parameters, returns sum of a and b.'''
-    return 0
+    return a+b
 
 
 def sub(a, b):
     '''Accepts 2 numbers as parameters, returns subtraction of a and b.'''
-    return 0
+    
+    return a-b
 
 
 def product(a, b):
     '''Accepts 2 numbers as parameters, returns product of a and b.'''
     # CHALLENGE: use a for loop and your sum function to implement product
-    return 0
+    for x in range(b)
+    final = 0
+    final = sum(a,final)
+    return final
 
 
 def divide(a, b):
     '''Accepts 2 numbers as parameters, returns a divided by b.'''
     # only pass in numbers that are divisible for sake of implementation
     # CHALLENGE: use a while loop and your sub function to implement divide
-    return 0
+    if a>b:
+        final = a
+        quotient = 0
+        while(final!=0)
+        final = sub(final,b)
+        quotient += 1
+        
+        print("a has to be greater than b for valid division")
+    return quotient
 
 
 def root(num):
