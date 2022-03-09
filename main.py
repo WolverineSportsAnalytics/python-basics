@@ -17,9 +17,9 @@ def sub(a, b):
 def product(a, b):
     '''Accepts 2 numbers as parameters, returns product of a and b.'''
     # CHALLENGE: use a for loop and your sum function to implement product
-    for x in range(b)
     final = 0
-    final = sum(a,final)
+    for x in range(b):
+        final = sum(a,final)
     return final
 
 
@@ -30,7 +30,7 @@ def divide(a, b):
     quotient = 0
     if a>b:
         final = a
-        while(final!=0)
+        while(final!=0):
         final = sub(final,b)
         quotient += 1
     else:   
@@ -46,7 +46,7 @@ def root(num):
     # CHALLENGE: do not use any built-in Python functions
     check = false
     for x in range(0,num/2,1):
-        if divide(num,x) == x
+        if divide(num,x) == x:
         print("Valid square root for " + num + " has been found.")
         check = true
         return x
