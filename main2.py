@@ -16,7 +16,24 @@ def mostOccurences(nums):
     # Hint: use oddOrEven to test function faster
     # Hint: use a map
     # Hint: https://stackoverflow.com/questions/13098638/how-to-iterate-over-the-elements-of-a-map-in-python
-    return -1 
+    current_total = 0
+    max_count = 1
+    most = nums[0]
+    for x in range(1,nums):
+        if nums[x-1] == nums[x]:
+            current_total += 1
+        else:
+            if current_total > max_count:
+                most = nums[x-1]
+                max_count = current_total
+        current_total = 1
+    if current_total > max_count:
+        max_count = current_total
+        most = nums[-1] # -1 is used to obtain the element at the last index as it is the most frequent element
+        return most
+                
+    
+    return most # last element is not the most frequent element
 
 
 def main():
