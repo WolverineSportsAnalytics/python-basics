@@ -27,14 +27,15 @@ def divide(a, b):
     '''Accepts 2 numbers as parameters, returns a divided by b.'''
     # only pass in numbers that are divisible for sake of implementation
     # CHALLENGE: use a while loop and your sub function to implement divide
+    quotient = 0
     if a>b:
         final = a
-        quotient = 0
         while(final!=0)
         final = sub(final,b)
         quotient += 1
-        
+    else:   
         print("a has to be greater than b for valid division")
+        
     return quotient
 
 
@@ -43,8 +44,15 @@ def root(num):
     # only pass in numbers that are perfect squares for sake of implementation
     # leetcode easy
     # CHALLENGE: do not use any built-in Python functions
-    return 0;
-
+    check = false
+    for x in range(0,num/2,1):
+        if divide(num,x) == x
+        print("Valid square root for " + num + " has been found.")
+        check = true
+        return x
+    if check == false:
+        print(" No valid square root for " + num + " has been found.")
+    return 0
 
 def main():
     '''The main function is where you will test all of your functions.'''
